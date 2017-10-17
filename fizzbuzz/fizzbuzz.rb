@@ -16,6 +16,10 @@ class FizzBuzz
     "FizzBuzz"
   end
 
+  def print item
+    puts item
+  end
+
   def logic
     make_array.map do |i|
       if i % 15 == 0
@@ -24,13 +28,9 @@ class FizzBuzz
         multiple_five
       elsif i % 3 == 0
         multiple_three
+      else
+        i
       end
     end
-  end
-end
-
-def print_to_screen
-  make_array.each do |item|
-    puts item
   end
 end
