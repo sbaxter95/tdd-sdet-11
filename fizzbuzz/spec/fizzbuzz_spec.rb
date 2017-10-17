@@ -2,19 +2,22 @@ require 'spec_helper'
 
 describe FizzBuzz do
 
-  it 'should find if number is a multiple of 3' do
-    fizzbuzz = FizzBuzz.new
-    expect(fizzbuzz.three(num)).to eql 0
+  it 'should make multiples of 3 say Fizz' do
+    turn = FizzBuzz.new
+    game = turn.logic
+    expect(game[2]).to eq('Fizz')
   end
 
   it 'should find if number is a multiple of 5' do
-    fizzbuzz = FizzBuzz.new
-    expect(fizzbuzz.five(num)).to eql 0
+    turn = FizzBuzz.new
+    game = turn.logic
+    expect(game[4]).to eq('Buzz')
   end
 
   it 'should find if number is a multiple of 15' do
-    fizzbuzz = FizzBuzz.new
-    expect(fizzbuzz.fifteen(num)).to eql 0 
+    turn = FizzBuzz.new
+    game = turn.logic
+    expect(game[14]).to eq('FizzBuzz')
   end
 
 end
