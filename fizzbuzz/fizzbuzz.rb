@@ -5,7 +5,7 @@ class FizzBuzz
   end
 
   def logic
-    make_array.collect do |i|
+    make_array.map do |i|
       if i % 15 == 0
         'FizzBuzz'
       elsif i % 5 == 0
@@ -14,5 +14,11 @@ class FizzBuzz
         'Fizz'
       end
     end
+  end
+end
+
+def print_to_screen
+  make_array.each do |item|
+    puts item
   end
 end
