@@ -7,11 +7,15 @@ describe 'JSON example tests' do
   end
 
   it 'should have the key colour for each data object' do
-    expect(@json['colors'][0]).to have_key('color')
-    expect(@json['colors'][1]).to have_key('color')
-    expect(@json['colors'][2]).to have_key('color')
-    expect(@json['colors'][3]).to have_key('color')
+    @json['colors'].each do |i|
+      expect(i).to have_key('color')
+    end
+    # expect(@json['colors'][0]).to have_key('color')
+    # expect(@json['colors'][1]).to have_key('color')
+    # expect(@json['colors'][2]).to have_key('color')
+    # expect(@json['colors'][3]).to have_key('color')
   end
+
 
   it "the colour red should have the hex value of '#FF0' " do
     @json['colors'].each do |item|
