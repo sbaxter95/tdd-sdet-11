@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'testing api' do
 
   before(:all) do
-      @json = JSON.parse(HTTParty.get('http://api.postcodes.io/postcodes/ky157uu').body)
+      @json = JSON.parse(HTTParty.get('http://api.postcodes.io/postcodes/sw166rw').body)
     end
 
     it 'should check if quality is an integer' do
@@ -107,6 +107,98 @@ describe 'testing api' do
         expect(@json['result']['european_electoral_region ']).to be_kind_of(String)
       elsif @json['result']['european_electoral_region '].class == NIL
         expect(@json['result']['european_electoral_region ']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the primary_care_trust is either a string or null' do
+      if @json['result']['primary_care_trust'].class == String
+        expect(@json['result']['primary_care_trust']).to be_kind_of(String)
+      elsif @json['result']['primary_care_trust'].class == NIL
+        expect(@json['result']['primary_care_trust']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the region is either a string or null' do
+      if @json['result']['region'].class == String
+        expect(@json['result']['region']).to be_kind_of(String)
+      elsif @json['result']['region'].class == NIL
+        expect(@json['result']['region']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the lsoa is either a string or null' do
+      if @json['result']['lsoa'].class == String
+        expect(@json['result']['lsoa']).to be_kind_of(String)
+      elsif @json['result']['lsoa'].class == NIL
+        expect(@json['result']['lsoa']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the msoa is either a string or null' do
+      if @json['result']['msoa'].class == String
+        expect(@json['result']['msoa']).to be_kind_of(String)
+      elsif @json['result']['msoa'].class == NIL
+        expect(@json['result']['msoa']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the ccg is either a string or null' do
+      if @json['result']['ccg'].class == String
+        expect(@json['result']['ccg']).to be_kind_of(String)
+      elsif @json['result']['ccg'].class == NIL
+        expect(@json['result']['ccg']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the nuts is either a string or null' do
+      if @json['result']['nuts'].class == String
+        expect(@json['result']['nuts']).to be_kind_of(String)
+      elsif @json['result']['nuts'].class == NIL
+        expect(@json['result']['nuts']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure code is an object' do
+      expect(@json['result']['codes']).to be_kind_of(Object)
+    end
+
+    it 'should ensure that the codes.admin_district is either a string or null' do
+      if @json['result']['codes']['admin_district'].class == String
+        expect(@json['result']['codes']['admin_district']).to be_kind_of(String)
+      elsif @json['result']['codes']['admin_district'].class == NIL
+        expect(@json['result']['codes']['admin_district']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the codes.admin_ward is either a string or null' do
+      if @json['result']['codes']['admin_ward'].class == String
+        expect(@json['result']['codes']['admin_ward']).to be_kind_of(String)
+      elsif @json['result']['codes']['admin_ward'].class == NIL
+        expect(@json['result']['codes']['admin_ward']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the codes.parish is either a string or null' do
+      if @json['result']['codes']['parish'].class == String
+        expect(@json['result']['codes']['parish']).to be_kind_of(String)
+      elsif @json['result']['codes']['parish'].class == NIL
+        expect(@json['result']['codes']['parish']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the codes.ccg is either a string or null' do
+      if @json['result']['codes']['ccg'].class == String
+        expect(@json['result']['codes']['ccg']).to be_kind_of(String)
+      elsif @json['result']['codes']['ccg'].class == NIL
+        expect(@json['result']['codes']['ccg']).to be_kind_of(NIL)
+      end
+    end
+
+    it 'should ensure that the codes.nuts is either a string or null' do
+      if @json['result']['codes']['nuts'].class == String
+        expect(@json['result']['codes']['nuts']).to be_kind_of(String)
+      elsif @json['result']['codes']['nuts'].class == NIL
+        expect(@json['result']['codes']['nuts']).to be_kind_of(NIL)
       end
     end
 
