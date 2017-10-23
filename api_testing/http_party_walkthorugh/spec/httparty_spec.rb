@@ -158,8 +158,8 @@ describe 'testing api' do
       end
     end
 
-    it 'should ensure code is an object' do
-      expect(@json['result']['codes']).to be_kind_of(Object)
+    it 'should ensure code is a Hash' do
+      expect(@json['result']['codes']).to be_kind_of(Hash)
     end
 
     it 'should ensure that the codes.admin_district is either a string or null' do
